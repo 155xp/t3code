@@ -91,6 +91,8 @@ const makeCliTestServerConfig = (baseDir: string) =>
       logWebSocketEvents: false,
       tailscaleServeEnabled: false,
       tailscaleServePort: 443,
+      krakenEnabled: true,
+      krakenPort: 3783,
     } satisfies ServerConfig.ServerConfig["Service"];
   });
 

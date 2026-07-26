@@ -130,6 +130,8 @@ const EnvServerConfig = Config.all({
     Config.option,
     Config.map(Option.getOrUndefined),
   ),
+  krakenEnabled: Config.boolean("T3CODE_KRAKEN_ENABLED").pipe(Config.withDefault(true)),
+  krakenPort: Config.port("T3CODE_KRAKEN_PORT").pipe(Config.withDefault(3783)),
 });
 
 export interface CliServerFlags {
@@ -370,6 +372,8 @@ export const resolveServerConfig = (
       logWebSocketEvents,
       tailscaleServeEnabled,
       tailscaleServePort,
+      krakenEnabled: env.krakenEnabled,
+      krakenPort: env.krakenPort,
     };
 
     return config;

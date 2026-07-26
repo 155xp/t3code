@@ -38,6 +38,8 @@ const makeServerConfig = Effect.fn(function* (baseDir: string) {
     logWebSocketEvents: false,
     tailscaleServeEnabled: false,
     tailscaleServePort: 443,
+    krakenEnabled: true,
+    krakenPort: 3783,
     port: 0,
     host: undefined,
     desktopBootstrapToken: undefined,

@@ -387,6 +387,8 @@ const buildAppUnderTest = (options?: {
       logWebSocketEvents: false,
       tailscaleServeEnabled: false,
       tailscaleServePort: 443,
+      krakenEnabled: false,
+      krakenPort: 3783,
       ...options?.config,
     };
     const layerConfig = ServerConfig.layer(config);

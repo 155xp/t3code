@@ -101,6 +101,7 @@ export const RelayAgentActivityState = Schema.Struct({
   headline: TrimmedNonEmptyString,
   detail: Schema.optional(TrimmedNonEmptyString),
   modelTitle: TrimmedNonEmptyString,
+  providerTitle: Schema.optional(TrimmedNonEmptyString),
   updatedAt: TrimmedNonEmptyString,
   deepLink: TrimmedNonEmptyString,
 });

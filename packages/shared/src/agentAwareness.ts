@@ -23,6 +23,7 @@ export interface AgentAwarenessState {
   readonly headline: string;
   readonly detail?: string;
   readonly modelTitle: string;
+  readonly providerTitle: string;
   readonly updatedAt: string;
   readonly deepLink: string;
 }
@@ -69,9 +70,20 @@ export function projectThreadAwareness(
     headline: headlineForPhase(phase),
     ...(detail === undefined ? {} : { detail }),
     modelTitle: thread.modelSelection.model,
+    providerTitle:
+      thread.session?.providerName ??
+      formatProviderInstanceId(String(thread.modelSelection.instanceId)),
     updatedAt: thread.updatedAt,
     deepLink: buildAgentAwarenessDeepLink({ environmentId, threadId: thread.id }),
   };
+}
+
+function formatProviderInstanceId(instanceId: string): string {
+  const normalized = instanceId.split(/[/:]/).findLast(Boolean)?.replaceAll(/[-_]+/g, " ").trim();
+  if (!normalized) {
+    return "Agent";
+  }
+  return normalized.replace(/\b\w/g, (character) => character.toUpperCase());
 }
 
 function resolveThreadAwarenessPhase(
