@@ -54,7 +54,6 @@ There's no public docs site yet, checkout the miscellaneous markdown files in [d
 ## Documentation
 
 - [Getting started](./docs/getting-started/quick-start.md)
-- [NZXT Kraken agent status](./docs/integrations/nzxt-kraken.md)
 - [Remote access](./docs/user/remote-access.md)
 - [Keeping T3 Code in sync](./docs/user/server-updates.md)
 - [Architecture overview](./docs/architecture/overview.md)
